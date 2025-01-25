@@ -1466,3 +1466,28 @@ footer p:last-child {
         font-size: 2rem; /* Further adjust for mobile */
     }
 }
+
+/* Example of responsive adjustments */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4.8rem; /* Adjusted for smaller screens */
+    }
+
+    .container {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    .countdown {
+        flex-direction: column; /* Stack items on smaller screens */
+    }
+
+    .countdown-item {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
+/* Ensure buttons are large enough for touch */
+button {
+    padding: 12px 20px; /* Ensure sufficient padding */
+    min-width: 44px; /* Minimum touch target size */
+}
