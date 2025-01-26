@@ -1479,7 +1479,8 @@ footer p:last-child {
 
 /* Global styles */
 html, body {
-    height: 100%; /* Ensure the body takes full height */
+    height: auto; /* Allow the body to grow with content */
+    min-height: 100%; /* Ensure minimum height is 100% for scrolling */
     overflow-x: hidden; /* Prevent horizontal overflow */
     overflow-y: auto; /* Allow vertical scrolling */
     margin: 0; /* Remove default margin */
