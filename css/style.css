@@ -476,7 +476,7 @@ section {
     max-width: 100%; /* Ensure no section exceeds 100% width */
     width: 100%; /* Ensure sections take full width */
     display: block; /* Ensure sections stack vertically */
-    touch-action: pan-y; /* Allow vertical panning (scrolling) */
+    touch-action: none; /* Disable touch actions to allow full page scrolling */
 }
 
 /* Background layer (bottom) */
