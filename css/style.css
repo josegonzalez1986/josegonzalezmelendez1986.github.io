@@ -1517,3 +1517,10 @@ header, footer {
         font-size: 3rem; /* Further adjust header size for mobile */
     }
 }
+
+/* Disable scrolling on individual sections */
+section {
+    overflow: hidden; /* Prevent scrolling within sections */
+    touch-action: none; /* Disable touch actions to allow full page scrolling */
+    height: auto; /* Allow sections to grow with content */
+}
