@@ -109,10 +109,13 @@ body::before {
 
 /* Header styling */
 header {
-    background-image: url('./path/to/H1.jpg'); /* Set the header background image */
-    background-size: cover; /* Cover the entire header */
-    background-position: center; /* Center the image */
+    position: relative;
     padding: 2rem 1rem;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
     width: 100%; /* Ensure header takes full width */
 }
 
@@ -359,7 +362,10 @@ button:active::after {
 
 /* Footer styling */
 footer {
+    position: relative;
+    text-align: center;
     padding: 2rem 1rem;
+    background-color: #b89c5e; /* Elegant gold color */
     width: 100%; /* Ensure footer takes full width */
 }
 
@@ -1490,6 +1496,7 @@ img {
 
 /* Header and Footer styling */
 header, footer {
+    background-color: #b89c5e; /* Elegant gold color */
     padding: 2rem 1rem;
     width: 100%; /* Ensure header and footer take full width */
 }
