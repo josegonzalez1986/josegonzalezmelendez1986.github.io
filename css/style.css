@@ -109,13 +109,10 @@ body::before {
 
 /* Header styling */
 header {
-    position: relative;
+    background-image: url('./path/to/H1.jpg'); /* Set the header background image */
+    background-size: cover; /* Cover the entire header */
+    background-position: center; /* Center the image */
     padding: 2rem 1rem;
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
     width: 100%; /* Ensure header takes full width */
 }
 
@@ -362,8 +359,6 @@ button:active::after {
 
 /* Footer styling */
 footer {
-    position: relative;
-    text-align: center;
     padding: 2rem 1rem;
     width: 100%; /* Ensure footer takes full width */
 }
