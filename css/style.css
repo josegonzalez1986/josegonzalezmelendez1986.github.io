@@ -1524,3 +1524,8 @@ section {
     touch-action: none; /* Disable touch actions to allow full page scrolling */
     height: auto; /* Allow sections to grow with content */
 }
+
+/* Allow links to be clickable */
+a {
+    touch-action: manipulation; /* Allow touch actions for links */
+}

@@ -80,17 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Photo sharing button animation
     const shareButton = document.querySelector('.share-button');
     if (shareButton) {
-        shareButton.addEventListener('mouseover', function() {
-            const icon = this.querySelector('.share-icon');
-            icon.style.transform = 'scale(1.1) rotate(-5deg)';
-        });
-
-        shareButton.addEventListener('mouseout', function() {
-            const icon = this.querySelector('.share-icon');
-            icon.style.transform = 'scale(1) rotate(0)';
-        });
-
-        // Add touch feedback for mobile
         shareButton.addEventListener('touchstart', function() {
             this.style.transform = 'scale(0.98)'; // Feedback on touch
         });
