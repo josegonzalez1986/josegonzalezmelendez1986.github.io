@@ -110,10 +110,7 @@ body::before {
 header {
     position: relative;
     padding: 2rem 1rem;
-    background-image: url('./src/H1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #d4af37; /* Elegant golden color */
     min-height: 150px;
     display: flex;
     align-items: center;
@@ -368,10 +365,7 @@ footer {
     position: relative;
     text-align: center;
     padding: 2rem 1rem;
-    background-image: url('./src/H1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #d4af37; /* Elegant golden color */
     width: 100%; /* Ensure footer takes full width */
 }
 
