@@ -101,4 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add any touch-specific behavior here if needed
         });
     });
+
+    // Allow touch events to propagate for scrolling
+    document.addEventListener('touchmove', function(event) {
+        event.stopPropagation(); // Allow scrolling
+    }, { passive: true });
 });
