@@ -25,23 +25,19 @@
             text-align: center;
             line-height: 1.6;
             overflow-x: hidden; /* Prevent horizontal overflow */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
 
         /* Apply box-sizing globally */
         *, *::before, *::after {
-            box-sizing: inherit; /* Inherit box-sizing from body */
+            box-sizing: border-box; /* Inherit box-sizing from body */
         }
 
-        /* Full-height sections */
-        .full-height {
-            min-height: 100vh; /* Each section takes full height of the viewport */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            padding: 1rem; /* Add padding for spacing */
+        /* Section styling */
+        section {
+            padding: 2rem 1rem; /* Add padding for spacing */
             max-width: 100%; /* Ensure no section exceeds 100% width */
+            width: 100%; /* Ensure sections take full width */
+            display: block; /* Ensure sections stack vertically */
         }
 
         /* Header styling */
@@ -85,6 +81,17 @@
             min-width: 44px; /* Minimum touch target size */
             max-width: 100%; /* Ensure buttons do not exceed 100% width */
         }
+
+        /* Countdown number styling */
+        .countdown-number {
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text; /* Vendor prefix for WebKit browsers */
+            background-clip: text; /* Standard property */
+            -webkit-text-fill-color: transparent; /* Vendor prefix for WebKit browsers */
+            text-fill-color: transparent; /* Standard property (not widely supported) */
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
     </style>
 </head>
 <body>
@@ -101,25 +108,25 @@
     </header>
 
     <main class="container">
-        <section class="full-height">
+        <section>
             <h2>Y estaríamos muy felices de tener tu compañía en este momento tan especial para nuestra vida</h2>
             <img src="./src/foto1.jpg" alt="Pareja de novios" class="image-couple">
         </section>
 
-        <section class="full-height">
+        <section>
             <p>Únete a nosotros el <strong>Domingo 2 de Noviembre, 2025 a las 16:00h</strong></p>
             <h3>Cuenta regresiva para el Gran Día</h3>
             <div class="countdown" id="countdown"></div>
         </section>
 
-        <section class="full-height">
+        <section>
             <h3>Ubicación</h3>
             <p>El evento se llevará a cabo en: <strong>Villa del Lago</strong>, La Garita de Alajuela</p>
             <img src="./src/venue.jpg" alt="Lugar del evento" class="image-venue">
             <a href="https://maps.app.goo.gl/wwiM2uR74h3XrTK66" target="_blank" class="venue-link">Ver en Google Maps</a>
         </section>
 
-        <section class="full-height">
+        <section>
             <h3>Código de Vestimenta</h3>
             <div class="dress-code-grid">
                 <div class="dress-code-item">
@@ -141,7 +148,7 @@
             </div>
         </section>
 
-        <section class="full-height">
+        <section>
             <h3>Regalo de Bodas</h3>
             <div class="gift-content">
                 <p class="gift-message">Tu presencia es nuestro mejor regalo, si estabas pensando en darnos otro obsequio, agradecemos alguna de las siguientes opciones:</p>
@@ -167,13 +174,13 @@
             </div>
         </section>
 
-        <section class="full-height">
+        <section>
             <h3>Captura los mejores momentos</h3>
             <p>Y compártelos con nosotros haciendo clic en el siguiente enlace</p>
             <a href="https://onelifesocial.page.link/uSvs" target="_blank" class="share-button">Álbum Compartido</a>
         </section>
 
-        <section class="full-height">
+        <section>
             <h3>Por favor confirma tu Asistencia</h3>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbnq0GGRL5ED3UoS7QUCJxTZDWMsjX8C_9EqyXcdTXYxP-Q/viewform?usp=header" target="_blank" class="rsvp-button">Confirmo</a>
         </section>
