@@ -117,6 +117,9 @@ header {
     justify-content: center;
     margin-bottom: 1rem;
     width: 100%; /* Ensure header takes full width */
+    background-image: url('./path/to/H1.jpg'); /* Set the header background image */
+    background-size: cover; /* Cover the entire header */
+    background-position: center; /* Center the image */
 }
 
 .header-content {
@@ -473,6 +476,7 @@ section {
     max-width: 100%; /* Ensure no section exceeds 100% width */
     width: 100%; /* Ensure sections take full width */
     display: block; /* Ensure sections stack vertically */
+    touch-action: pan-y; /* Allow vertical panning (scrolling) */
 }
 
 /* Background layer (bottom) */

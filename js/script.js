@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Allow touch events to propagate for scrolling
+    document.addEventListener('touchmove', function(event) {
+        event.stopPropagation(); // Allow scrolling
+    }, { passive: true });
+
     // Set the wedding date to November 2, 2025 at 16:00 (4:00 PM)
     const weddingDate = new Date("November 2, 2025 16:00:00").getTime();
 
@@ -101,9 +106,4 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add any touch-specific behavior here if needed
         });
     });
-
-    // Allow touch events to propagate for scrolling
-    document.addEventListener('touchmove', function(event) {
-        event.stopPropagation(); // Allow scrolling
-    }, { passive: true });
 });
