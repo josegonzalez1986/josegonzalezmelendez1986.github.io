@@ -56,7 +56,6 @@ body {
     text-align: center;
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal overflow */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 body::before {
@@ -204,10 +203,9 @@ h1 {
 
 .countdown-number {
     background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
-    -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: transparent;
     font-size: 2.8rem;
     font-weight: 800;
 }
@@ -480,6 +478,7 @@ section {
     padding: 2rem 1rem; /* Add padding for spacing */
     max-width: 100%; /* Ensure no section exceeds 100% width */
     width: 100%; /* Ensure sections take full width */
+    display: block; /* Ensure sections stack vertically */
 }
 
 /* Background layer (bottom) */
@@ -497,8 +496,7 @@ section::before {
 /* Watermark layer (middle) */
 section::after,
 section:nth-child(even)::after,
-section:nth-child(2)::after, /* Specifically target countdown section */
-.countdown-section::after {
+section:nth-child(2)::after { /* Specifically target countdown section */
     content: 'V&J';
     position: absolute;
     font-family: 'Pinyon Script', cursive;
@@ -810,12 +808,6 @@ section:has(.rsvp-button) {
         padding: 0 15px;
     }
 
-    /* Header adjustments */
-    header {
-        min-height: 100px;
-        padding: 1.5rem 1rem;
-    }
-
     h1 {
         font-size: 4.8rem;
     }
@@ -824,23 +816,20 @@ section:has(.rsvp-button) {
         font-size: 2.25rem;
     }
 
-    /* Section adjustments */
     section {
         padding: 3rem 1rem;
         margin: 0;
         border-radius: 20px;
     }
 
-    /* Countdown adjustments */
     .countdown {
-        gap: 10px;
+        flex-direction: column;
         padding: 0.5rem;
         margin: 1rem auto;
     }
 
     .countdown-item {
-        min-width: unset;
-        width: calc(50% - 20px);
+        width: 100%;
         padding: 0.8rem;
         margin: 5px;
     }
@@ -853,7 +842,6 @@ section:has(.rsvp-button) {
         font-size: 0.75rem;
     }
 
-    /* Image adjustments */
     .image-couple, .image-venue {
         width: 100%;
         max-width: 100%;
@@ -861,7 +849,6 @@ section:has(.rsvp-button) {
         margin: 1rem 0;
     }
 
-    /* Dress code adjustments */
     .dress-code-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -876,7 +863,6 @@ section:has(.rsvp-button) {
         width: 100%;
     }
 
-    /* RSVP button adjustments */
     .rsvp-button {
         padding: 12px 30px;
         font-size: 0.9rem;
@@ -1457,7 +1443,6 @@ section strong {
     transition: all 0.4s ease;
     box-shadow: 0 5px 15px rgba(167, 29, 42, 0.25);
     margin-top: -15px; /* Adjust this value to move the button up */
-    position: relative; /* Ensure it can be positioned without affecting others */
 }
 
 /* Hover effect */
@@ -1492,30 +1477,4 @@ footer p:last-child {
     .footer-highlight {
         font-size: 2rem; /* Further adjust for mobile */
     }
-}
-
-/* Example of responsive adjustments */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 4.8rem; /* Adjusted for smaller screens */
-    }
-
-    .container {
-        padding: 15px; /* Reduced padding for smaller screens */
-    }
-
-    .countdown {
-        flex-direction: column; /* Stack items on smaller screens */
-    }
-
-    .countdown-item {
-        width: 100%; /* Full width on mobile */
-    }
-}
-
-/* Ensure buttons are large enough for touch */
-button {
-    padding: 12px 20px; /* Ensure sufficient padding */
-    min-width: 44px; /* Minimum touch target size */
-    max-width: 100%; /* Ensure buttons do not exceed 100% width */
 }
