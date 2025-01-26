@@ -6,14 +6,47 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>Invitación de Boda</title>
+    <title>Boda</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Add this CSS to style the header and footer */
+        /* Import Google Fonts - must be at the top of the file */
+        @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        /* Apply box-sizing globally */
+        *, *::before, *::after {
+            box-sizing: inherit; /* Inherit box-sizing from body */
+        }
+
+        /* Full-height sections */
+        .full-height {
+            min-height: 100vh; /* Each section takes full height of the viewport */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            padding: 1rem; /* Add padding for spacing */
+            max-width: 100%; /* Ensure no section exceeds 100% width */
+        }
+
+        /* Header styling */
         header {
-            background-image: url('./src/H1.jpg');
+            background-image: url('./src/H1.jpg'); /* Ensure this path is correct */
             background-size: cover; /* Cover the entire header */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Prevent repeating */
@@ -21,16 +54,36 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            width: 100%; /* Ensure header takes full width */
         }
 
+        /* Footer styling */
         footer {
-            background-image: url('./src/H1.jpg');
+            background-image: url('./src/H1.jpg'); /* Ensure this path is correct */
             background-size: cover; /* Cover the entire footer */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Prevent repeating */
             padding: 2rem 1rem;
             text-align: center;
+            width: 100%; /* Ensure footer takes full width */
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+
+        /* Ensure images don't overflow */
+        img {
+            max-width: 100%; /* Ensure images scale down to fit their container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Ensure buttons are large enough for touch */
+        button {
+            padding: 12px 20px; /* Ensure sufficient padding */
+            min-width: 44px; /* Minimum touch target size */
+            max-width: 100%; /* Ensure buttons do not exceed 100% width */
         }
     </style>
 </head>
@@ -156,18 +209,10 @@
             }
         }, 1000);
 
-        // Optional: Add touch event listeners for buttons if needed
-        document.querySelectorAll('.rsvp-button, .share-button').forEach(button => {
-            button.addEventListener('touchstart', function() {
-                // Add any touch-specific behavior here if needed
-            });
-        });
-
-        // Ensure smooth scrolling for mobile devices
+        // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });

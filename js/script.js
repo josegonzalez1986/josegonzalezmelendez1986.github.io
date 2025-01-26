@@ -106,4 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'scale(1)';
         });
     }
+
+    // Optional: Add touch event listeners for buttons if needed
+    document.querySelectorAll('.rsvp-button, .share-button').forEach(button => {
+        button.addEventListener('touchstart', function() {
+            // Add any touch-specific behavior here if needed
+        });
+    });
 }); 

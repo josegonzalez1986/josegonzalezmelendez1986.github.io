@@ -29,6 +29,23 @@
     --container-width-mobile: 95%;
 }
 
+/* Apply box-sizing globally */
+*, *::before, *::after {
+    box-sizing: inherit; /* Inherit box-sizing from body */
+}
+
+/* Full-height sections */
+.full-height {
+    min-height: 100vh; /* Each section takes full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 1rem; /* Add padding for spacing */
+    max-width: 100%; /* Ensure no section exceeds 100% width */
+    width: 100%; /* Ensure sections take full width */
+}
+
 /* Ensure body takes full height and allows scrolling */
 body {
     font-family: Arial, sans-serif;
@@ -38,10 +55,8 @@ body {
     padding: 0;
     text-align: center;
     line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-    min-height: 100vh; /* Ensure body takes full height */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 body::before {
@@ -105,6 +120,7 @@ header {
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    width: 100%; /* Ensure header takes full width */
 }
 
 .header-content {
@@ -241,6 +257,9 @@ button {
     border: none;
     position: relative;
     overflow: hidden;
+    padding: 12px 20px; /* Ensure sufficient padding */
+    min-width: 44px; /* Minimum touch target size */
+    max-width: 100%; /* Ensure buttons do not exceed 100% width */
 }
 
 button:hover {
@@ -355,6 +374,7 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%; /* Ensure footer takes full width */
 }
 
 /* Add overlay for text readability */
@@ -441,9 +461,9 @@ footer p:last-child {
     }
 }
 
-/* Add smooth scrolling */
+/* Smooth scrolling */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 /* Add selection style */
@@ -914,8 +934,8 @@ section:has(.rsvp-button) {
 
 /* Ensure images don't overflow */
 img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Ensure images scale down to fit their container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Fix for any potential overflow issues */
@@ -1494,4 +1514,5 @@ footer p:last-child {
 button {
     padding: 12px 20px; /* Ensure sufficient padding */
     min-width: 44px; /* Minimum touch target size */
+    max-width: 100%; /* Ensure buttons do not exceed 100% width */
 }
