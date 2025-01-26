@@ -1473,3 +1473,43 @@ footer p:last-child {
         font-size: 2rem; /* Further adjust for mobile */
     }
 }
+
+/* Global styles */
+html, body {
+    height: 100%; /* Ensure height is set to 100% */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Ensure sections take full height of the viewport */
+.container {
+    padding: 1rem; /* Add padding for spacing */
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%; /* Ensure images scale down to fit their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Header and Footer styling */
+header, footer {
+    background-color: #b89c5e; /* Elegant gold color */
+    padding: 2rem 1rem;
+    width: 100%; /* Ensure header and footer take full width */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 4rem; /* Adjust header size for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 3rem; /* Further adjust header size for mobile */
+    }
+}
