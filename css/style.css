@@ -111,7 +111,6 @@ body::before {
 header {
     position: relative;
     padding: 2rem 1rem;
-    background-color: #b89c5e; /* Elegant gold color */
     min-height: 150px;
     display: flex;
     align-items: center;
@@ -366,7 +365,6 @@ footer {
     position: relative;
     text-align: center;
     padding: 2rem 1rem;
-    background-color: #b89c5e; /* Elegant gold color */
     width: 100%; /* Ensure footer takes full width */
 }
 
@@ -1496,7 +1494,6 @@ img {
 
 /* Header and Footer styling */
 header, footer {
-    background-color: #b89c5e; /* Elegant gold color */
     padding: 2rem 1rem;
     width: 100%; /* Ensure header and footer take full width */
 }
