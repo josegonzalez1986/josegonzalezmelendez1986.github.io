@@ -72,18 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Add scroll progress indicator
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress';
-    document.body.appendChild(progressBar);
-
-    window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.transform = `scaleX(${scrolled / 100})`;
-    });
-
     // Photo sharing button animation
     const shareButton = document.querySelector('.share-button');
     if (shareButton) {
@@ -99,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add touch feedback for mobile
         shareButton.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.98)';
+            this.style.transform = 'scale(0.98)'; // Feedback on touch
         });
 
         shareButton.addEventListener('touchend', function() {
-            this.style.transform = 'scale(1)';
+            this.style.transform = 'scale(1)'; // Reset after touch
         });
     }
 
@@ -113,4 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add any touch-specific behavior here if needed
         });
     });
-}); 
+});
