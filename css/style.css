@@ -1479,8 +1479,7 @@ footer p:last-child {
 
 /* Global styles */
 html, body {
-    height: auto; /* Allow the body to grow with content */
-    min-height: 100%; /* Ensure minimum height is 100% for scrolling */
+    height: 100%; /* Ensure the body takes full height */
     overflow-x: hidden; /* Prevent horizontal overflow */
     overflow-y: auto; /* Allow vertical scrolling */
     margin: 0; /* Remove default margin */
@@ -1518,10 +1517,10 @@ header, footer {
     }
 }
 
-/* Disable scrolling on individual sections */
+/* Disable all touch actions on sections */
 section {
     overflow: hidden; /* Prevent scrolling within sections */
-    touch-action: none; /* Disable touch actions to allow full page scrolling */
+    touch-action: none; /* Disable all touch actions */
     height: auto; /* Allow sections to grow with content */
 }
 
