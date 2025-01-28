@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Allow touch events to propagate for scrolling
     document.addEventListener('touchmove', function(event) {
-        event.stopPropagation(); // Allow scrolling
+        // event.stopPropagation(); // Commented out to allow default scrolling
     }, { passive: true });
 
     // Set the wedding date to November 2, 2025 at 16:00 (4:00 PM)
