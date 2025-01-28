@@ -24,7 +24,6 @@
             padding: 0;
             text-align: center;
             line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         /* Apply box-sizing globally */
@@ -37,7 +36,6 @@
             padding: 2rem 1rem; /* Add padding for spacing */
             max-width: 100%; /* Ensure no section exceeds 100% width */
             width: 100%; /* Ensure sections take full width */
-            display: block; /* Ensure sections stack vertically */
         }
 
         /* Header styling */
@@ -62,11 +60,6 @@
             padding: 2rem 1rem;
             text-align: center;
             width: 100%; /* Ensure footer takes full width */
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
 
         /* Ensure images don't overflow */
@@ -215,16 +208,6 @@
                 document.getElementById("countdown").innerHTML = "¡Es el día de la boda!";
             }
         }, 1000);
-
-        // Smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
     </script>
 
     <script src="/js/script.js"></script>
