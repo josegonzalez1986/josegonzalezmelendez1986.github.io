@@ -58,21 +58,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add fade-in animation for sections
+    // Simplify the fade-in animation for sections
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        // Add rootMargin to start animation slightly before the section comes into view
+        rootMargin: '50px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                // Add fade-in class with a small delay to prevent jumps
+                setTimeout(() => {
+                    entry.target.classList.add('fade-in');
+                }, 100);
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach(section => {
+    // Only observe sections that should animate
+    document.querySelectorAll('.animate-section').forEach(section => {
         section.classList.add('hidden');
         observer.observe(section);
     });
