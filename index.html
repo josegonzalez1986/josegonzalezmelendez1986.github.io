@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/src/H1.JPG" as="image">
+    <link rel="preload" href="./src/foto1.jpg" as="image">
     <style>
         /* Import Google Fonts - must be at the top of the file */
         @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
@@ -36,6 +38,11 @@
             padding: 2rem 1rem; /* Add padding for spacing */
             max-width: 100%; /* Ensure no section exceeds 100% width */
             width: 100%; /* Ensure sections take full width */
+            min-height: 100px; /* Provide minimum space for content */
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            /* Remove any transform animations */
+            transform: none;
         }
 
         /* Header styling */
@@ -64,8 +71,17 @@
 
         /* Ensure images don't overflow */
         img {
-            max-width: 100%; /* Ensure images scale down to fit their container */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%;
+            height: auto;
+            /* Add these to prevent layout shifts */
+            display: block;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        /* Add loading state */
+        img[loading="lazy"] {
+            opacity: 0;
         }
 
         /* Ensure buttons are large enough for touch */
@@ -85,6 +101,13 @@
             font-size: 2.8rem;
             font-weight: 800;
         }
+
+        /* Remove any flashy animations */
+        .watermark {
+            /* Simplify animation */
+            animation: none;
+            opacity: 0.1;
+        }
     </style>
 </head>
 <body>
@@ -95,6 +118,7 @@
     </div>
 
     <header>
+        <img src="/src/H1.JPG" alt="Header image" fetchpriority="high">
         <div class="header-content">
             <h1>¡Nos casamos!</h1>
         </div>
@@ -103,7 +127,12 @@
     <main class="container">
         <section>
             <h2>Y estaríamos muy felices de tener tu compañía en este momento tan especial para nuestra vida</h2>
-            <img src="./src/foto1.jpg" alt="Pareja de novios" class="image-couple">
+            <img 
+                src="./src/foto1.jpg" 
+                alt="Pareja de novios" 
+                class="image-couple"
+                fetchpriority="high"
+            >
         </section>
 
         <section>
@@ -115,7 +144,12 @@
         <section>
             <h3>Ubicación</h3>
             <p>El evento se llevará a cabo en: <strong>Villa del Lago</strong>, La Garita de Alajuela</p>
-            <img src="./src/venue.jpg" alt="Lugar del evento" class="image-venue">
+            <img 
+                src="./src/venue.jpg" 
+                alt="Lugar del evento" 
+                class="image-venue"
+                loading="lazy"
+            >
             <a href="https://maps.app.goo.gl/wwiM2uR74h3XrTK66" target="_blank" class="venue-link">Ver en Google Maps</a>
         </section>
 
@@ -124,19 +158,39 @@
             <div class="dress-code-grid">
                 <div class="dress-code-item">
                     <p class="dress-code-text">Vestimenta Formal Hombres</p>
-                    <img src="./src/V1.jpg" alt="Vestimenta formal hombres" class="dress-code-image">
+                    <img 
+                        src="./src/V1.jpg" 
+                        alt="Vestimenta formal hombres" 
+                        class="dress-code-image"
+                        loading="lazy"
+                    >
                 </div>
                 <div class="dress-code-item">
                     <p class="dress-code-text">Vestimenta Formal Mujeres</p>
-                    <img src="./src/V2.jpg" alt="Vestimenta formal mujeres" class="dress-code-image">
+                    <img 
+                        src="./src/V2.jpg" 
+                        alt="Vestimenta formal mujeres" 
+                        class="dress-code-image"
+                        loading="lazy"
+                    >
                 </div>
                 <div class="dress-code-item">
                     <p class="dress-code-text">Colores No Permitidos</p>
-                    <img src="./src/V3.jpg" alt="Colores no permitidos" class="dress-code-image">
+                    <img 
+                        src="./src/V3.jpg" 
+                        alt="Colores no permitidos" 
+                        class="dress-code-image"
+                        loading="lazy"
+                    >
                 </div>
                 <div class="dress-code-item">
                     <p class="dress-code-text">Vestimenta NO Permitida</p>
-                    <img src="./src/V4.jpg" alt="Vestimenta NO permitida" class="dress-code-image">
+                    <img 
+                        src="./src/V4.jpg" 
+                        alt="Vestimenta NO permitida" 
+                        class="dress-code-image"
+                        loading="lazy"
+                    >
                 </div>
             </div>
         </section>
@@ -185,6 +239,17 @@
     </footer>
 
     <script>
+        // Add this to handle image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle lazy loaded images
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            lazyImages.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+
         // Set the wedding date
         var weddingDate = new Date("November 2, 2025 16:00:00").getTime();
 
